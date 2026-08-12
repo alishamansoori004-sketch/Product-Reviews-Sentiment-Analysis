@@ -57,7 +57,7 @@ Logistic Regression
      ↓
 Sentiment Prediction
 
-📊 Model Performance
+##📊 Model Performance
 
 The original dataset was highly imbalanced, with significantly more positive reviews than neutral and negative reviews.
 
