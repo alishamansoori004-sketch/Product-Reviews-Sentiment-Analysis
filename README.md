@@ -87,6 +87,7 @@ F1-score achieved for each sentiment class on the test dataset.
 Negative
 Neutral
 Positive
+
 📉 Confusion Matrix
 
 The confusion matrix shows how correctly the model classified each sentiment:
@@ -126,7 +127,8 @@ product
 amazing
 quality
 excellent
-📊 Prediction Probability
+  
+  📊 Prediction Probability
 
 The application displays the probability of each sentiment class using an interactive Chart.js bar chart.
 
@@ -248,6 +250,8 @@ Confidence progress bar
 Interactive probability chart
 Responsive dashboard
 Modern cards and buttons
+
+
 🛠️ Technologies Used
 Programming Language
 Python
@@ -273,6 +277,7 @@ Development Tools
 Git
 GitHub
 VS Code
+
 📁 Project Structure
 Product-Reviews-Sentiment-Analysis/
 │
@@ -305,6 +310,7 @@ Product-Reviews-Sentiment-Analysis/
 │
 └── templates/
     └── index.html
+
 ⚙️ Installation
 1. Clone the Repository
 git clone https://github.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis.git
@@ -415,7 +421,10 @@ Add model comparison dashboard
 Deploy the application online
 Add API endpoints
 Add cloud database support
+
+
 📌 Key Project Highlights
+
 🤖 Machine Learning based sentiment analysis
 🧠 NLP text preprocessing
 📊 TF-IDF feature extraction
@@ -428,6 +437,8 @@ Add cloud database support
 📄 PDF report generation
 🌙 Dark / Light mode
 ✨ Modern responsive UI
+
+
 👩‍💻 Author
 Alisha Mansoori
 
