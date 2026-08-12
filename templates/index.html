@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Product Review Sentiment Analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+
+    <div class="logo">
+
+        <div class="logo-circle">
+            🤖
+        </div>
+        <div class="dashboard">
+
+    <div class="dashboard-card positive-card">
+        <div class="dashboard-icon">😊</div>
+        <h3>{{ positive_count }}</h3>
+        <p>Positive</p>
+    </div>
+
+    <div class="dashboard-card neutral-card">
+        <div class="dashboard-icon">😐</div>
+        <h3>{{ neutral_count }}</h3>
+        <p>Neutral</p>
+    </div>
+
+    <div class="dashboard-card negative-card">
+        <div class="dashboard-icon">😞</div>
+        <h3>{{ negative_count }}</h3>
+        <p>Negative</p>
+    </div>
+
+    <div class="dashboard-card total-card">
+        <div class="dashboard-icon">📊</div>
+        <h3>{{ total_predictions }}</h3>
+        <p>Total</p>
+    </div>
+
+</div>
+        <div>
+
+            <h1>AI Product Review</h1>
+
+            <p class="tagline">
+                Smart Sentiment Analysis with Machine Learning
+            </p>
+
+        </div>
+
+    </div>
+
+    <button id="theme-toggle">
+        ☀️
+    </button>
+
+</div>
+
+    <p class="subtitle">
+        Powered by Machine Learning & Natural Language Processing
+    </p>
+
+    <!-- Form -->
+    <form id="reviewForm" action="/predict" method="POST">
+
+        <textarea
+            name="review"
+            placeholder="Enter your product review here..."
+            required>{{ request.form.review if request.form.review else "" }}</textarea>
+
+        
+            <div class="buttons">
+
+    <button
+        id="analyzeBtn"
+        class="analyze"
+        type="submit">
+
+        🎯 Analyze
+
+    </button>
+
+    <button
+        type="button"
+        id="voiceBtn"
+        class="voice">
+
+        🎤 Speak
+
+    </button>
+
+    <button
+        class="clear"
+        type="reset">
+
+        🗑 Clear
+
+    </button>
+
+</div>
+
+    </form>
+        <!-- Sentiment Distribution Chart -->
+
+    <div class="dashboard-chart">
+
+      <h2>📊 Sentiment Distribution</h2>
+
+         <p class="chart-subtitle">
+            Overview of all analyzed product reviews
+          </p>
+
+        <canvas
+          id="sentimentChart"
+          data-positive="{{ positive_count }}"
+          data-neutral="{{ neutral_count }}"
+          data-negative="{{ negative_count }}"
+        ></canvas>
+
+    </div>
+
+          <!-- Prediction Result -->
+
+{% if prediction %}
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="icon">😊</div>
+        <h3>Sentiment</h3>
+        <p>{{ prediction }}</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="icon">🎯</div>
+        <h3>Confidence</h3>
+        <p>{{ confidence }}%</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="icon">📝</div>
+        <h3>Words</h3>
+        <p>{{ word_count }}</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="icon">⚡</div>
+        <h3>Processing</h3>
+        <p>{{ processing_time }} sec</p>
+    </div>
+
+</div>
+
+<div class="result">
+
+    <div class="analysis-title">
+        🤖 AI Analysis Complete
+    </div>
+
+    <div class="emoji">
+        {% if prediction=="Positive" %}
+            😊
+        {% elif prediction=="Negative" %}
+            😞
+        {% else %}
+            😐
+        {% endif %}
+    </div>
+
+    <h2 class="prediction-title">
+        {{ prediction }}
+    </h2>
+
+    <p class="confidence">
+        AI Confidence
+    </p>
+
+    <h1>{{ confidence }}%</h1>
+
+    <div class="progress">
+
+        <div
+            id="progressBar"
+            class="progress-bar {% if prediction == 'Positive' %}positive{% elif prediction == 'Negative' %}negative{% else %}neutral{% endif %}"
+            data-width="{{ confidence }}">
+
+            {{ confidence }}%
+
+        </div>
+
+    </div>
+
+    <hr style="margin:35px 0;">
+
+    <h3 style="text-align:center;margin-bottom:20px;">
+        Prediction Probability
+    </h3>
+
+    <input
+        type="hidden"
+        id="labels"
+        value='{{ labels|tojson|safe if labels else "[]" }}'>
+
+    <input
+        type="hidden"
+        id="scores"
+        value='{{ scores|tojson|safe if scores else "[]" }}'>
+
+    <canvas id="probChart"></canvas>
+
+    <div class="ai-suggestion">
+
+        <h3>💡 AI Suggestion</h3>
+
+        <p>{{ suggestion }}</p>
+
+    </div>
+
+    <div class="keywords-section">
+
+        <h3>🔑 Top Keywords</h3>
+
+        <div class="keyword-container">
+
+            {% for word in keywords %}
+                <span class="keyword-chip">{{ word }}</span>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="download-section">
+
+        <button
+            class="download-btn"
+            type="button"
+            onclick="window.location.href='/download_pdf'">
+
+            📄 Download PDF Report
+
+        </button>
+
+    </div>
+
+</div> <!-- RESULT ENDS HERE -->
+
+{% endif %}
+
+<!-- Recent Prediction History -->
+
+{% if history %}
+
+<div class="history">
+
+    <h3>🕒 Recent Predictions</h3>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Review</th>
+
+                <th>Prediction</th>
+
+                <th>Confidence</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for item in history %}
+
+            <tr>
+
+                <td>{{ item.review }}</td>
+
+                <td>
+                    {% if item.prediction == "Positive" %}
+                        😊 Positive
+                    {% elif item.prediction == "Negative" %}
+                        😞 Negative
+                    {% else %}
+                        😐 Neutral
+                    {% endif %}
+                </td>
+
+                <td>{{ item.confidence }}%</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endif %}
+    
+
+    <!-- Footer -->
+<footer class="footer">
+
+    <p>
+        Developed by <strong>Alisha Mansoori</strong>
+    </p>
+
+    <div class="tech-stack">
+        <span>🐍 Python</span>
+        <span>⚡ Flask</span>
+        <span>🧠 Scikit-learn</span>
+        <span>📊 Chart.js</span>
+        <span>🎨 HTML • CSS • JS</span>
+    </div>
+
+    <p class="copyright">
+        © 2026 AI Product Review Sentiment Analyzer
+    </p>
+
+</footer>
+  
+</div>
+
+<!-- Particles.js -->
+<script src="{{ url_for('static', filename='particles.min.js') }}"></script>
+
+
+<!-- Loading Overlay -->
+
+<div id="loadingScreen">
+
+    <div class="loader-card">
+
+        <div class="ai-loader">
+            🤖
+        </div>
+
+        <h2>AI is Analyzing...</h2>
+
+        <p>Please wait while the model processes your review.</p>
+
+        <div class="loader-bar">
+
+            <div class="loader-progress"></div>
+
+        </div>
+
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
