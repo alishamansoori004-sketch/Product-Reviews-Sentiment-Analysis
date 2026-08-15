@@ -1,292 +1,117 @@
-# 🤖 AI Product Review Sentiment Analyzer
+# 🤖 Product Reviews Sentiment Analysis
 
-An AI-powered web application that analyzes product reviews and classifies them into **Positive, Negative, or Neutral** sentiment using Machine Learning and Natural Language Processing.
-
-The application provides sentiment prediction, confidence score, probability visualization, keyword extraction, prediction history, voice input, and downloadable PDF reports through an interactive Flask-based web interface.
-
----
-
-## 🚀 Features
-
-- 🤖 AI-based sentiment analysis
-- 😊 Positive sentiment detection
-- 😐 Neutral sentiment detection
-- 😞 Negative sentiment detection
-- 🎯 Prediction confidence score
-- 📊 Sentiment probability visualization
-- 📈 Sentiment distribution dashboard
-- 🔑 Top keyword extraction
-- 🕒 Recent prediction history
-- 🎤 Voice-based review input
-- 📄 Downloadable PDF prediction report
-- 🌙 Dark / Light mode
-- ⚡ Processing time display
-- 📝 Word count analysis
-- 💾 SQLite database for storing prediction history
-- 🎨 Responsive and modern user interface
-- ✨ Animated loading screen and particle background
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange?logo=scikit-learn)
+![NLP](https://img.shields.io/badge/NLP-Sentiment%20Analysis-green)
+![SQLite](https://img.shields.io/badge/SQLite-Database-blue?logo=sqlite)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
-## 🧠 Machine Learning
+# 📌 Project Overview
 
-The project uses Natural Language Processing and Machine Learning techniques for sentiment classification.
+This project is an **AI-powered Product Reviews Sentiment Analysis application** built using Python, Natural Language Processing (NLP), Machine Learning, and Flask.
 
-### Text Processing
+The application analyzes customer product reviews and classifies them into:
 
-The review text is processed using:
+- 😊 Positive
+- 😐 Neutral
+- 😞 Negative
 
-- Text cleaning
-- Stopword removal
+The project demonstrates practical skills in:
+
+- Natural Language Processing
+- Text Preprocessing
 - TF-IDF Vectorization
-- Unigram and Bigram features
+- Machine Learning
+- Model Evaluation
+- Flask Web Development
+- Data Visualization
+- SQLite Database Management
 
-### Feature Extraction
+---
 
-The project uses:
+# 🎯 Business Problem
+
+Online platforms receive thousands of customer reviews every day.
+
+Manually analyzing these reviews is time-consuming and difficult.
+
+The objective of this project is to automatically analyze customer feedback and answer questions like:
+
+- Is the customer satisfied with the product?
+- Is the review positive, neutral, or negative?
+- How confident is the model in its prediction?
+- What are the most common sentiments?
+- How well does the machine learning model classify reviews?
+
+---
+
+# 🛠️ Tech Stack
+
+- Python
+- Flask
+- Pandas
+- NumPy
+- Scikit-Learn
+- NLTK
+- TF-IDF
+- Logistic Regression
+- SQLite
+- HTML
+- CSS
+- JavaScript
+- Chart.js
+- ReportLab
+
+---
+
+# 🧠 Machine Learning Approach
+
+The project uses **Natural Language Processing (NLP)** and **Logistic Regression** for sentiment classification.
+
+### Machine Learning Pipeline
 
 ```text
-TfidfVectorizer
-max_features = 10000
-ngram_range = (1, 2)
-sublinear_tf = True
-
-##🤖 Classification Algorithm
-
-Logistic Regression is used as the primary classification algorithm for predicting product review sentiment.
-
-TF-IDF Vectorization for converting text into numerical features
-Unigrams + Bigrams using ngram_range=(1,2)
-Balanced Dataset with 5,000 samples per sentiment class
-Class Weight Balancing using class_weight="balanced"
-Sentiment classes:
-🔴 Negative
-🟡 Neutral
-🟢 Positive
+Customer Review
+       ↓
+Text Cleaning
+       ↓
+NLP Preprocessing
+       ↓
+TF-IDF Vectorization
+       ↓
+Logistic Regression
+       ↓
+Sentiment Prediction
+       ↓
+Confidence Score
 
 ##📊 Model Performance
 
-The model achieved 87.8% accuracy on the test dataset.
+The dataset was balanced before training to improve classification performance across all sentiment classes.
+Balanced Dataset
+| Sentiment | Samples |
+| --------- | ------- |
+| Negative  | 5,000   |
+| Neutral   | 5,000   |
+| Positive  | 5,000   |
 
-Metric	Negative	Neutral	Positive
-Precision	0.91	0.85	0.88
-Recall	0.95	0.85	0.83
-F1-Score	0.93	0.85	0.85
+Total Samples: 15,000
 
-Overall Accuracy: 87.8%
+Model Accuracy
 
-Model F1-Score by Sentiment
+87.8%
+| Class             | Precision | Recall   | F1-Score |
+| ----------------- | --------- | -------- | -------- |
+| Negative          | 0.91      | 0.95     | 0.93     |
+| Neutral           | 0.85      | 0.85     | 0.85     |
+| Positive          | 0.88      | 0.83     | 0.85     |
+| **Macro Average** | **0.88**  | **0.88** | **0.88** |
 
-F1-score achieved for each sentiment class on the test dataset.
-
-0
-0.25
-0.5
-0.75
-1
-Negative
-Neutral
-Positive
-
-📉 Confusion Matrix
-
-The confusion matrix shows how correctly the model classified each sentiment:
-
-                 Predicted
-              Neg  Neu  Pos
-
-Actual Neg    951   21   28
-Actual Neu     62  851   87
-Actual Pos     35  133  832
-
-The model performs particularly well on Negative reviews, while some Neutral and Positive reviews are misclassified due to the similarity of language between these categories.
-
-🔍 Prediction Analysis
-
-For every submitted review, the application provides:
-
-Sentiment
-Confidence
-Word Count
-Processing Time
-Prediction Probability
-AI Suggestion
-Top Keywords
-Example
-Review:
-"The product is amazing and the quality is excellent."
-
-Prediction:
-Positive
-
-Confidence:
-98.31%
-
-Keywords:
-product
-amazing
-quality
-excellent
-  
-  📊 Prediction Probability
-
-The application displays the probability of each sentiment class using an interactive Chart.js bar chart.
-
-Example:
-
-Negative     ███
-Neutral      ████
-Positive     ████████████████████
-
-This allows users to understand how confident the model is about each possible sentiment.
-
-💡 AI Suggestion
-
-The application also provides an AI-generated suggestion based on the predicted sentiment.
-
-Positive
-Customers are highly satisfied with this product.
-Recommended for purchase.
-Negative
-This review indicates dissatisfaction.
-Consider checking customer complaints before purchasing.
-Neutral
-Mixed opinions detected.
-Read more customer reviews before making a decision.
-🔑 Keyword Extraction
-
-The application extracts important keywords from the cleaned review.
-
-For example:
-
-Review:
-"The product is amazing and the quality is excellent."
-
-Keywords:
-product
-amazing
-quality
-excellent
-
-This helps users quickly understand the main terms associated with a review.
-
-🎤 Voice Input
-
-The application supports voice-based review input using the browser's Speech Recognition API.
-
-Users can click:
-
-🎤 Speak
-
-and speak their product review.
-
-The recognized text is automatically inserted into the review text area.
-
-🕒 Prediction History
-
-The application stores previous predictions using SQLite.
-
-The dashboard displays:
-
-Positive predictions
-Neutral predictions
-Negative predictions
-Total predictions
-
-Recent reviews are displayed in a prediction history table.
-
-💾 Database
-
-The project uses SQLite for storing prediction history.
-
-Database:
-
-reviews.db
-
-The database stores:
-
-Review text
-Prediction
-Confidence
-Processing time
-Word count
-Created timestamp
-
-reviews.db is generated locally by the application and is intentionally excluded from the GitHub repository.
-
-📄 PDF Report
-
-Users can generate a downloadable PDF report containing information about the latest prediction.
-
-The report includes:
-
-AI Product Review Sentiment Analyzer
-Review
-Prediction
-Confidence
-
-Users can download the report using:
-
-📄 Download PDF Report
-🌙 Dark / Light Mode
-
-The application includes a Dark / Light mode toggle.
-
-Users can switch the interface using:
-
-☀️
-
-or
-
-🌙
-✨ Interactive UI
-
-The frontend includes:
-
-Animated loading screen
-AI-themed particle background
-Prediction animations
-Confidence progress bar
-Interactive probability chart
-Responsive dashboard
-Modern cards and buttons
-
-
-🛠️ Technologies Used
-Programming Language
-Python
-Backend
-Flask
-Machine Learning
-Scikit-learn
-Logistic Regression
-TF-IDF
-Natural Language Processing
-NLTK
-Database
-SQLite
-Frontend
-HTML5
-CSS3
-JavaScript
-Visualization
-Chart.js
-PDF Generation
-ReportLab
-Development Tools
-Git
-GitHub
-VS Code
-
-📁 Project Structure
+##📂 Project Structure
 Product-Reviews-Sentiment-Analysis/
-│
-├── app.py
-├── database.py
-├── train_model.py
-├── requirements.txt
-├── README.md
-├── .gitignore
 │
 ├── dataset/
 │   └── reviews.csv
@@ -298,169 +123,165 @@ Product-Reviews-Sentiment-Analysis/
 │
 ├── model/
 │   ├── sentiment_model.pkl
-│   └── vectorizer.pkl
+│   └── tfidf_vectorizer.pkl
 │
 ├── notebooks/
 │   └── sentiment_analysis.ipynb
 │
 ├── static/
-│   ├── style.css
-│   ├── script.js
-│   └── particles.min.js
+│   ├── css/
+│   └── js/
 │
-└── templates/
-    └── index.html
+├── templates/
+│   └── index.html
+│
+├── app.py
+├── database.py
+├── train_model.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+##📊 Visualizations
+Sentiment Distribution
+<img width="1770" height="1508" alt="sentiment_distribution" src="https://github.com/user-attachments/assets/8837257c-f058-4d08-beac-e051cc9542b5" />
+Confusion Matrix
+<img width="1550" height="1361" alt="confusion_matrix" src="https://github.com/user-attachments/assets/70889e95-5298-494d-b5cc-6a4d977343dc" />
+Model Comparison<img width="2074" height="1407" alt="model_comparison" src="https://github.com/user-attachments/assets/afcc6e24-cba0-41f4-989a-b446ffb18fff" />
 
-⚙️ Installation
-1. Clone the Repository
+##🔍 Example Predictions
+Positive Review
+"The product is amazing and the quality is excellent."
+
+Prediction: Positive
+
+Confidence: 98.31%
+
+Negative Review
+"Very poor quality and I am completely disappointed."
+
+Prediction: Negative
+
+Confidence: 89.11%
+
+Negative Review with Negation
+"The product is not good and I do not recommend it."
+
+Prediction: Negative
+
+Confidence: 71.04%
+##✨ Features
+📝 Product review analysis
+🤖 AI-powered sentiment prediction
+😊 Positive / Neutral / Negative classification
+📊 Confidence score
+📈 Sentiment statistics
+📋 Prediction history
+🔍 Keyword extraction
+📄 PDF report generation
+🎤 Voice input
+🌙 Dark / Light mode
+📊 Interactive charts
+💾 SQLite database
+
+##📈 Key Insights
+The model achieved approximately 87.8% accuracy.
+The dataset was balanced using 5,000 samples for each sentiment class.
+Negative reviews achieved the highest recall at 0.95.
+TF-IDF was used to convert text reviews into numerical features.
+Logistic Regression was used as the final sentiment classification model.
+The application provides confidence scores along with predictions.
+Prediction history is stored using SQLite.
+
+##💾 Database
+
+The application uses SQLite to store prediction history.
+
+The database records information such as:
+
+Review
+Sentiment
+Confidence score
+Processing time
+Word count
+Prediction date and time
+
+The generated database file is excluded from GitHub using .gitignore.
+
+##📄 PDF Report
+
+The application provides an option to generate a PDF report containing sentiment prediction information.
+
+Generated PDF files are kept locally and are excluded from GitHub.
+
+##▶️ How to Run
+Clone the Repository
 git clone https://github.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis.git
-2. Navigate to the Project
+Go into the Project Folder
 cd Product-Reviews-Sentiment-Analysis
-3. Create a Virtual Environment
+Create Virtual Environment
 python -m venv venv
-4. Activate the Virtual Environment
-Windows
+Activate Virtual Environment
+
+Windows:
+
 venv\Scripts\activate
-5. Install Dependencies
+
+Linux / macOS:
+
+source venv/bin/activate
+Install Dependencies
 pip install -r requirements.txt
-🧠 Train the Model
+Download NLTK Resources
 
-To train the sentiment classification model:
+Open Python and run:
 
+import nltk
+
+
+nltk.download('stopwords')
+nltk.download('punkt')
+Train the Model
 python train_model.py
-
-The trained model and TF-IDF vectorizer will be saved inside:
-
-model/
-
-Generated files:
-
-model/sentiment_model.pkl
-model/vectorizer.pkl
-▶️ Run the Application
-
-Start the Flask application:
-
+Run Flask Application
 python app.py
 
-The application will run at:
+Open your browser:
 
 http://127.0.0.1:5000
+##📁 Dataset
 
-Open the URL in your browser.
+The project uses a Product Reviews Dataset containing customer reviews and sentiment labels.
 
-🔄 Application Workflow
-              User Review
-                   │
-                   ▼
-            Flask Web App
-                   │
-                   ▼
-          Text Preprocessing
-                   │
-                   ▼
-            TF-IDF Vectorizer
-                   │
-                   ▼
-        Logistic Regression Model
-                   │
-                   ▼
-        ┌──────────┼──────────┐
-        ▼          ▼          ▼
-     Negative    Neutral    Positive
-        │          │          │
-        └──────────┼──────────┘
-                   ▼
-          Confidence Score
-                   │
-                   ▼
-        Probability Visualization
-                   │
-          ┌────────┴────────┐
-          ▼                 ▼
-      AI Suggestion     Save History
-                            │
-                            ▼
-                       SQLite Database
+The dataset is stored in:
 
-# 📊 Project Visualizations
+dataset/reviews.csv
 
-## Sentiment Distribution
-
-<img src="images/sentiment_distribution.png" alt="Sentiment Distribution" width="800">
-
-## Confusion Matrix
-
-<img src="images/confusion_matrix.png" alt="Confusion Matrix" width="800">
-
-## Model Comparison
-
-<img src="images/model_comparison.png" alt="Model Comparison" width="800">
-🎯 Use Cases
-
-This project can be used for:
-
-🛒 E-commerce product review analysis
-👥 Customer feedback analysis
-😊 Customer satisfaction analysis
-📊 Business intelligence
-🔍 Opinion mining
-📈 Review monitoring
-🧠 NLP-based text classification
-🔮 Future Improvements
-
-Possible future improvements include:
-
-Improve Neutral sentiment classification
-Experiment with advanced NLP models
-Implement BERT / Transformer-based sentiment analysis
+##🚀 Future Improvements
+Improve sentiment classification accuracy
+Add BERT-based sentiment analysis
+Add deep learning models
 Add multilingual sentiment analysis
-Add CSV / Excel bulk review upload
+Add real-time analytics dashboard
 Add user authentication
-Add admin dashboard
-Add real-time analytics
-Add model comparison dashboard
-Deploy the application online
-Add API endpoints
-Add cloud database support
-
-
-📌 Key Project Highlights
-
-🤖 Machine Learning based sentiment analysis
-🧠 NLP text preprocessing
-📊 TF-IDF feature extraction
-⚡ Logistic Regression classification
-⚖️ Balanced training dataset
-🎯 87.8% test accuracy
-📈 Interactive Chart.js visualization
-💾 SQLite prediction history
-🎤 Voice input
-📄 PDF report generation
-🌙 Dark / Light mode
-✨ Modern responsive UI
-
+Deploy with a production database
+Add more advanced NLP features
 
 👩‍💻 Author
+
 Alisha Mansoori
 
-B.Tech — Artificial Intelligence & Data Science
+B.Tech – Artificial Intelligence & Data Science
 
-Skills Used
-Python
-Flask
-Machine Learning
-Natural Language Processing
-Scikit-learn
-NLTK
-SQL
-SQLite
-HTML
-CSS
-JavaScript
-Chart.js
-Git
-GitHub
-📜 License
+AI & Data Analytics Enthusiast
 
-This project is created for educational, learning, and portfolio purposes.
+GitHub:
+
+https://github.com/alishamansoori004-sketch
+
+Portfolio:
+
+https://aqiqafatima2.wixsite.com/aqiqa-fatima
+
+##⭐ If you found this project useful
+
+Please consider giving this repository a ⭐ on GitHub.
