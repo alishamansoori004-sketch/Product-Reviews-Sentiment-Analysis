@@ -141,12 +141,35 @@ Product-Reviews-Sentiment-Analysis/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-##📊 Visualizations
-Sentiment Distribution
-<img width="1770" height="1508" alt="sentiment_distribution" src="https://github.com/user-attachments/assets/8837257c-f058-4d08-beac-e051cc9542b5" />
-Confusion Matrix
-<img width="1550" height="1361" alt="confusion_matrix" src="https://github.com/user-attachments/assets/70889e95-5298-494d-b5cc-6a4d977343dc" />
-Model Comparison<img width="2074" height="1407" alt="model_comparison" src="https://github.com/user-attachments/assets/afcc6e24-cba0-41f4-989a-b446ffb18fff" />
+# 📊 Visualizations
+
+## Sentiment Distribution
+
+<img
+  src="https://github.com/user-attachments/assets/8837257c-f058-4d08-beac-e051cc9542b5"
+  alt="Sentiment Distribution"
+  width="800"
+/>
+
+---
+
+## Confusion Matrix
+
+<img
+  src="https://github.com/user-attachments/assets/70889e95-5298-494d-b5cc-6a4d977343dc"
+  alt="Confusion Matrix"
+  width="800"
+/>
+
+---
+
+## Model Comparison
+
+<img
+  src="https://github.com/user-attachments/assets/afcc6e24-cba0-41f4-989a-b446ffb18fff"
+  alt="Model Comparison"
+  width="800"
+/>
 
 ##🔍 Example Predictions
 Positive Review
