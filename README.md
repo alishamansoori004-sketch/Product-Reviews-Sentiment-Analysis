@@ -387,7 +387,7 @@ Open the URL in your browser.
 
 ## Sentiment Distribution
 
-<img src="./images/sentiment_distribution.png" alt="Sentiment Distribution" width="800">
+<img src="images/sentiment_distribution.png" alt="Sentiment Distribution" width="800">
 
 ## Confusion Matrix
 
@@ -395,7 +395,7 @@ Open the URL in your browser.
 
 ## Model Comparison
 
-<img src="./images/model_comparison.png" alt="Model Comparison" width="800">
+<img src="images/model_comparison.png" alt="Model Comparison" width="800">
 🎯 Use Cases
 
 This project can be used for:
