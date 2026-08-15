@@ -141,6 +141,10 @@ Product-Reviews-Sentiment-Analysis/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+
+---
+
 # 📊 Visualizations
 
 ## Sentiment Distribution
