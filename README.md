@@ -300,8 +300,10 @@ http://127.0.0.1:5000
 The project uses a Product Reviews Dataset containing customer reviews and sentiment labels.
 
 The dataset is stored in:
-
+```
 dataset/reviews.csv
+```
+
 ---
 
 ##🚀 Future Improvements
@@ -313,6 +315,7 @@ Add real-time analytics dashboard
 Add user authentication
 Deploy with a production database
 Add more advanced NLP features
+
 ---
 
 #👩‍💻 Author
