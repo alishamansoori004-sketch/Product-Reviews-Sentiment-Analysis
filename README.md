@@ -111,6 +111,7 @@ Model Accuracy
 | **Macro Average** | **0.88**  | **0.88** | **0.88** |
 
 ##📂 Project Structure
+```
 Product-Reviews-Sentiment-Analysis/
 │
 ├── dataset/
@@ -174,29 +175,34 @@ Product-Reviews-Sentiment-Analysis/
   alt="Model Comparison"
   width="800"
 />
-
+---
 ##🔍 Example Predictions
-Positive Review
+##Positive Review
+```
 "The product is amazing and the quality is excellent."
+```
 
 Prediction: Positive
 
 Confidence: 98.31%
 
-Negative Review
+##Negative Review
+```
 "Very poor quality and I am completely disappointed."
-
+```
 Prediction: Negative
 
 Confidence: 89.11%
 
-Negative Review with Negation
+##Negative Review with Negation
+```
 "The product is not good and I do not recommend it."
-
+```
 Prediction: Negative
 
 Confidence: 71.04%
-##✨ Features
+---
+#✨ Features
 📝 Product review analysis
 🤖 AI-powered sentiment prediction
 😊 Positive / Neutral / Negative classification
@@ -209,6 +215,7 @@ Confidence: 71.04%
 🌙 Dark / Light mode
 📊 Interactive charts
 💾 SQLite database
+---
 
 ##📈 Key Insights
 The model achieved approximately 87.8% accuracy.
@@ -218,7 +225,7 @@ TF-IDF was used to convert text reviews into numerical features.
 Logistic Regression was used as the final sentiment classification model.
 The application provides confidence scores along with predictions.
 Prediction history is stored using SQLite.
-
+---
 ##💾 Database
 
 The application uses SQLite to store prediction history.
@@ -233,7 +240,7 @@ Word count
 Prediction date and time
 
 The generated database file is excluded from GitHub using .gitignore.
-
+---
 ##📄 PDF Report
 
 The application provides an option to generate a PDF report containing sentiment prediction information.
@@ -242,46 +249,60 @@ Generated PDF files are kept locally and are excluded from GitHub.
 
 ##▶️ How to Run
 Clone the Repository
+```bash
 git clone https://github.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis.git
+```
 Go into the Project Folder
+```bash
 cd Product-Reviews-Sentiment-Analysis
+```
 Create Virtual Environment
+```bash
 python -m venv venv
+```
 Activate Virtual Environment
 
 Windows:
-
+```bash
 venv\Scripts\activate
-
+```
 Linux / macOS:
-
+```bash
 source venv/bin/activate
+```
 Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 Download NLTK Resources
 
 Open Python and run:
-
+```bash
 import nltk
-
-
+```
+```bash
 nltk.download('stopwords')
 nltk.download('punkt')
+```
 Train the Model
+```
 python train_model.py
 Run Flask Application
 python app.py
+```
 
 Open your browser:
-
+```bash
 http://127.0.0.1:5000
-##📁 Dataset
+```
+#📁 Dataset
 
 The project uses a Product Reviews Dataset containing customer reviews and sentiment labels.
 
 The dataset is stored in:
 
 dataset/reviews.csv
+---
 
 ##🚀 Future Improvements
 Improve sentiment classification accuracy
@@ -292,10 +313,11 @@ Add real-time analytics dashboard
 Add user authentication
 Deploy with a production database
 Add more advanced NLP features
+---
 
-👩‍💻 Author
+#👩‍💻 Author
 
-Alisha Mansoori
+**Alisha Mansoori**
 
 B.Tech – Artificial Intelligence & Data Science
 
@@ -308,6 +330,7 @@ https://github.com/alishamansoori004-sketch
 Portfolio:
 
 https://aqiqafatima2.wixsite.com/aqiqa-fatima
+---
 
 ##⭐ If you found this project useful
 
