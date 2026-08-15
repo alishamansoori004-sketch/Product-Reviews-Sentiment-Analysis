@@ -382,18 +382,20 @@ Open the URL in your browser.
                             │
                             ▼
                        SQLite Database
-📸 Project Screenshots
-Application Dashboard
 
-Add your application screenshot here:
+## 📸 Project Screenshots
 
-![Application Dashboard](images/dashboard.png)
-Sentiment Distribution
-![Sentiment Distribution](images/sentiment_distribution.png)
-Confusion Matrix
-![Confusion Matrix](images/confusion_matrix.png)
-Model Comparison
-![Model Comparison](images/model_comparison.png)
+### 📊 Sentiment Distribution
+
+![Sentiment Distribution](https://raw.githubusercontent.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis/main/images/sentiment_distribution.png)
+
+### 📉 Confusion Matrix
+
+![Confusion Matrix](https://raw.githubusercontent.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis/main/images/confusion_matrix.png)
+
+### 🤖 Model Comparison
+
+![Model Comparison](https://raw.githubusercontent.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis/main/images/model_comparison.png)
 🎯 Use Cases
 
 This project can be used for:
