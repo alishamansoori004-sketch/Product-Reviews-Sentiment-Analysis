@@ -391,7 +391,7 @@ Open the URL in your browser.
 
 ## Confusion Matrix
 
-<img src="./images/confusion_matrix.png" alt="Confusion Matrix" width="800">
+<img src="images/confusion_matrix.png" alt="Confusion Matrix" width="800">
 
 ## Model Comparison
 
