@@ -383,19 +383,19 @@ Open the URL in your browser.
                             ▼
                        SQLite Database
 
-## 📸 Project Screenshots
+# 📊 Project Visualizations
 
-### 📊 Sentiment Distribution
+## Sentiment Distribution
 
-![Sentiment Distribution](https://raw.githubusercontent.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis/main/images/sentiment_distribution.png)
+<img src="./images/sentiment_distribution.png" alt="Sentiment Distribution" width="800">
 
-### 📉 Confusion Matrix
+## Confusion Matrix
 
-![Confusion Matrix](https://raw.githubusercontent.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis/main/images/confusion_matrix.png)
+<img src="./images/confusion_matrix.png" alt="Confusion Matrix" width="800">
 
-### 🤖 Model Comparison
+## Model Comparison
 
-![Model Comparison](https://raw.githubusercontent.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis/main/images/model_comparison.png)
+<img src="./images/model_comparison.png" alt="Model Comparison" width="800">
 🎯 Use Cases
 
 This project can be used for:
