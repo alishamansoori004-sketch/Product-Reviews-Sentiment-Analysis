@@ -1,3 +1,7 @@
+
+
+
+
 # 🤖 Product Reviews Sentiment Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
@@ -71,7 +75,7 @@ The objective of this project is to automatically analyze customer feedback and 
 
 The project uses **Natural Language Processing (NLP)** and **Logistic Regression** for sentiment classification.
 
-### Machine Learning Pipeline
+### 🧠 Machine Learning Pipeline
 
 ```text
 Customer Review
@@ -87,31 +91,41 @@ Logistic Regression
 Sentiment Prediction
        ↓
 Confidence Score
+```
 
-##📊 Model Performance
+---
+
+## 📊 Model Performance
 
 The dataset was balanced before training to improve classification performance across all sentiment classes.
-Balanced Dataset
+
+### Balanced Dataset
+
 | Sentiment | Samples |
-| --------- | ------- |
+|-----------|---------|
 | Negative  | 5,000   |
 | Neutral   | 5,000   |
 | Positive  | 5,000   |
 
-Total Samples: 15,000
+**Total Samples:** 15,000
 
-Model Accuracy
+### Model Accuracy
 
-87.8%
-| Class             | Precision | Recall   | F1-Score |
-| ----------------- | --------- | -------- | -------- |
-| Negative          | 0.91      | 0.95     | 0.93     |
-| Neutral           | 0.85      | 0.85     | 0.85     |
-| Positive          | 0.88      | 0.83     | 0.85     |
-| **Macro Average** | **0.88**  | **0.88** | **0.88** |
+**87.8%**
 
-##📂 Project Structure
-```
+| Class | Precision | Recall | F1-Score |
+|-------|-----------|--------|----------|
+| Negative | 0.91 | 0.95 | 0.93 |
+| Neutral | 0.85 | 0.85 | 0.85 |
+| Positive | 0.88 | 0.83 | 0.85 |
+| **Macro Average** | **0.88** | **0.88** | **0.88** |
+
+---
+
+
+## 📂 Project Structure
+
+```text
 Product-Reviews-Sentiment-Analysis/
 │
 ├── dataset/
@@ -146,6 +160,7 @@ Product-Reviews-Sentiment-Analysis/
 
 ---
 
+
 # 📊 Visualizations
 
 ## Sentiment Distribution
@@ -175,166 +190,320 @@ Product-Reviews-Sentiment-Analysis/
   alt="Model Comparison"
   width="800"
 />
+
 ---
-##🔍 Example Predictions
-##Positive Review
-```
+# 🔍 Example Predictions
+
+## Positive Review
+
+```text
 "The product is amazing and the quality is excellent."
 ```
 
-Prediction: Positive
+**Prediction:** Positive
 
-Confidence: 98.31%
+**Confidence:** 98.31%
 
-##Negative Review
-```
+---
+
+## Negative Review
+
+```text
 "Very poor quality and I am completely disappointed."
 ```
-Prediction: Negative
 
-Confidence: 89.11%
+**Prediction:** Negative
 
-##Negative Review with Negation
-```
+**Confidence:** 89.11%
+
+---
+
+## Negative Review with Negation
+
+```text
 "The product is not good and I do not recommend it."
 ```
-Prediction: Negative
 
-Confidence: 71.04%
+**Prediction:** Negative
+
+**Confidence:** 71.04%
+
 ---
-#✨ Features
-📝 Product review analysis
-🤖 AI-powered sentiment prediction
-😊 Positive / Neutral / Negative classification
-📊 Confidence score
-📈 Sentiment statistics
-📋 Prediction history
-🔍 Keyword extraction
-📄 PDF report generation
-🎤 Voice input
-🌙 Dark / Light mode
-📊 Interactive charts
-💾 SQLite database
----
+# ⭐ Features
 
-##📈 Key Insights
-The model achieved approximately 87.8% accuracy.
-The dataset was balanced using 5,000 samples for each sentiment class.
-Negative reviews achieved the highest recall at 0.95.
-TF-IDF was used to convert text reviews into numerical features.
-Logistic Regression was used as the final sentiment classification model.
-The application provides confidence scores along with predictions.
-Prediction history is stored using SQLite.
----
-##💾 Database
+- 🧠 **AI-Based Sentiment Analysis**
+  - Classifies product reviews into Positive, Neutral, and Negative sentiments.
 
-The application uses SQLite to store prediction history.
+- 📊 **Confidence Score**
+  - Displays the model's prediction confidence percentage.
 
-The database records information such as:
+- 📝 **Text Preprocessing**
+  - Cleans reviews using text normalization and stopword processing.
 
-Review
-Sentiment
-Confidence score
-Processing time
-Word count
-Prediction date and time
+- 🔤 **TF-IDF Feature Extraction**
+  - Converts review text into numerical features for machine learning.
 
-The generated database file is excluded from GitHub using .gitignore.
----
-##📄 PDF Report
+- 🤖 **Logistic Regression Model**
+  - Uses Logistic Regression for sentiment classification.
 
-The application provides an option to generate a PDF report containing sentiment prediction information.
+- ⚖️ **Balanced Training Dataset**
+  - Uses 5,000 samples from each sentiment class to reduce class imbalance.
 
-Generated PDF files are kept locally and are excluded from GitHub.
+- 📈 **Interactive Dashboard**
+  - Displays sentiment statistics and prediction history.
 
-##▶️ How to Run
-Clone the Repository
+- 💾 **Prediction History**
+  - Stores previous predictions in a SQLite database.
+
+- 📄 **PDF Report Generation**
+  - Generates a downloadable PDF report containing prediction details.
+
+- 🎤 **Voice Input**
+  - Allows users to enter reviews using voice input.
+
+- 🌙 **Dark/Light Mode**
+  - Provides a user-friendly interface with theme switching.
+
+- 📱 **Responsive UI**
+  - Designed to work across different screen sizes.
+
+- ⚡ **Fast Flask Backend**
+  - Provides real-time sentiment predictions through a Flask web application.
+
+# 📊 Key Insights
+
+- ⚖️ **Balanced Dataset**
+  - The original dataset was highly imbalanced toward Positive reviews.
+  - The training dataset was balanced using 5,000 samples from each sentiment class.
+
+- 🎯 **Model Accuracy**
+  - The Logistic Regression model achieved **87.8% accuracy** on the test dataset.
+
+- 🟢 **Positive Sentiment**
+  - The model achieved **83% recall** for Positive reviews.
+
+- 🟡 **Neutral Sentiment**
+  - The model achieved **85% precision and 85% recall** for Neutral reviews.
+
+- 🔴 **Negative Sentiment**
+  - The model performed strongly on Negative reviews with **91% precision and 95% recall**.
+
+- 🔤 **TF-IDF Effectiveness**
+  - TF-IDF with unigram and bigram features effectively captured important words and phrases from product reviews.
+
+- 🚫 **Negation Handling**
+  - Reviews containing phrases such as **"not good"** and **"do not recommend"** were correctly classified as Negative.
+
+- 🚀 **Practical Application**
+  - The system can help analyze customer feedback and quickly identify overall sentiment from large numbers of product reviews.
+# 🗄️ Database
+
+The project uses **SQLite** to store prediction history generated by the sentiment analysis application.
+
+### Database Details
+
+- **Database:** SQLite
+- **Database File:** `reviews.db`
+- **Database Module:** `database.py`
+- **Purpose:** Store and retrieve sentiment prediction history.
+
+### Stored Information
+
+The database stores details such as:
+
+- 📝 Review text
+- 🎯 Predicted sentiment
+- 📊 Confidence score
+- ⏱️ Processing time
+- 🔢 Word count
+- 📅 Prediction date and time
+
+### Database Operations
+
+The application supports:
+
+- **Insert** — Saves every new sentiment prediction.
+- **Retrieve** — Fetches previous predictions for the dashboard/history.
+- **Ordering** — Displays recent predictions first.
+
+### Database Security
+
+The generated `reviews.db` file is excluded from GitHub using `.gitignore` because it contains locally generated prediction history.
+
+```text
+*.db
+```
+
+This keeps the repository clean while allowing the application to automatically create and use the database locally.
+
+# 🚀 How to Run the Project
+
+## 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis.git
-```
-Go into the Project Folder
-```bash
 cd Product-Reviews-Sentiment-Analysis
 ```
-Create Virtual Environment
+
+## 2️⃣ Create a Virtual Environment
+
 ```bash
 python -m venv venv
 ```
-Activate Virtual Environment
 
-Windows:
+## 3️⃣ Activate the Virtual Environment
+
+### Windows
+
 ```bash
 venv\Scripts\activate
 ```
-Linux / macOS:
+
+### Linux / macOS
+
 ```bash
 source venv/bin/activate
 ```
-Install Dependencies
+
+## 4️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-Download NLTK Resources
 
-Open Python and run:
+## 5️⃣ Download NLTK Resources
+
+Run Python:
+
 ```bash
+python
+```
+
+Then execute:
+
+```python
 import nltk
-```
-```bash
 nltk.download('stopwords')
-nltk.download('punkt')
 ```
-Train the Model
+
+Exit Python:
+
+```python
+exit()
 ```
+
+## 6️⃣ Train the Machine Learning Model
+
+```bash
 python train_model.py
-Run Flask Application
+```
+
+This generates the trained model files inside the `model/` directory.
+
+## 7️⃣ Start the Flask Application
+
+```bash
 python app.py
 ```
 
-Open your browser:
-```bash
+## 8️⃣ Open the Application
+
+Open your browser and visit:
+
+```text
 http://127.0.0.1:5000
 ```
-#📁 Dataset
 
-The project uses a Product Reviews Dataset containing customer reviews and sentiment labels.
+The application is now ready to analyze product reviews. 🚀
+# 📂 Dataset
 
-The dataset is stored in:
-```
-dataset/reviews.csv
-```
+The project uses a product review dataset containing customer reviews and their corresponding sentiment labels.
 
----
+### Dataset Information
 
-##🚀 Future Improvements
-Improve sentiment classification accuracy
-Add BERT-based sentiment analysis
-Add deep learning models
-Add multilingual sentiment analysis
-Add real-time analytics dashboard
-Add user authentication
-Deploy with a production database
-Add more advanced NLP features
+- **Source:** `dataset/reviews.csv`
+- **Type:** CSV
+- **Domain:** Product Reviews
+- **Target:** Sentiment Classification
+- **Classes:**
+  - 🟢 Positive
+  - 🟡 Neutral
+  - 🔴 Negative
 
----
+### Data Preprocessing
 
-#👩‍💻 Author
+The dataset is processed before training:
+
+1. Remove unnecessary text and formatting.
+2. Convert text into a standardized format.
+3. Clean the review text.
+4. Apply stopword processing.
+5. Convert reviews into numerical features using **TF-IDF**.
+6. Balance the sentiment classes using resampling.
+
+### Balanced Training Dataset
+
+The final training data contains:
+
+- **5,000 Negative reviews**
+- **5,000 Neutral reviews**
+- **5,000 Positive reviews**
+
+**Total balanced samples:** 15,000
+
+The balanced dataset helps reduce the effect of class imbalance and improves the model's ability to learn all three sentiment categories.
+
+# 🚀 Future Improvements
+
+The project can be further improved with the following features:
+
+- 🤖 **Advanced Machine Learning Models**
+  - Experiment with Random Forest, SVM, XGBoost, and transformer-based models.
+
+- 🧠 **Deep Learning Integration**
+  - Implement LSTM, BiLSTM, or BERT-based models for more advanced sentiment analysis.
+
+- 🌐 **Multilingual Sentiment Analysis**
+  - Support reviews written in multiple languages.
+
+- 📊 **Advanced Analytics Dashboard**
+  - Add interactive charts, filters, sentiment trends, and category-wise analysis.
+
+- 🔍 **Aspect-Based Sentiment Analysis**
+  - Identify sentiment related to specific product aspects such as price, quality, delivery, and packaging.
+
+- ☁️ **Cloud Database Integration**
+  - Replace local SQLite storage with a cloud database for scalable applications.
+
+- 🔐 **User Authentication**
+  - Add secure login and user-specific prediction history.
+
+- 📈 **Model Monitoring**
+  - Track model performance and retrain the model when new review data becomes available.
+
+- 🛒 **Real-Time Review Integration**
+  - Integrate reviews from e-commerce platforms or other supported data sources.
+
+- 🚀 **Cloud Deployment**
+  - Deploy the complete application using platforms such as Render, Railway, or AWS.
+
+- 📱 **Mobile-Friendly Improvements**
+  - Further optimize the interface for mobile and tablet devices.
+
+# 👩‍💻 Author
 
 **Alisha Mansoori**
 
-B.Tech – Artificial Intelligence & Data Science
+B.Tech — Artificial Intelligence & Data Science
 
-AI & Data Analytics Enthusiast
+### 🔗 Connect With Me
 
-GitHub:
+- 💼 **GitHub:**  
+  https://github.com/alishamansoori004-sketch
 
-https://github.com/alishamansoori004-sketch
+- 🌐 **Portfolio:**  
+  https://aqiqafatima2.wixsite.com/aqiqa-fatima
 
-Portfolio:
-
-https://aqiqafatima2.wixsite.com/aqiqa-fatima
 ---
 
-##⭐ If you found this project useful
-
-Please consider giving this repository a ⭐ on GitHub.
+⭐ If you found this project useful, consider giving the repository a **star**!
