@@ -12,7 +12,14 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
+## 🚀 Project Links
 
+| Resource | Link |
+|---|---|
+| 🌐 Live Demo | [Open Application](https://product-reviews-sentiment-analysis-cmol.onrender.com/) |
+| 💻 GitHub Repository | [View Source Code](https://github.com/alishamansoori004-sketch/Product-Reviews-Sentiment-Analysis) |
+
+---
 # 📌 Project Overview
 
 This project is an **AI-powered Product Reviews Sentiment Analysis application** built using Python, Natural Language Processing (NLP), Machine Learning, and Flask.
