@@ -12,14 +12,14 @@ from nltk.corpus import stopwords
 
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
-
+from database import create_database
 
 # ==========================================
 # FLASK APP
 # ==========================================
 
 app = Flask(__name__)
-
+create_database()
 
 # ==========================================
 # NLTK
