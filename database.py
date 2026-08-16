@@ -1,6 +1,9 @@
 import sqlite3
+import os
 
-DATABASE = "reviews.db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "reviews.db")
+
 
 
 def create_database():
